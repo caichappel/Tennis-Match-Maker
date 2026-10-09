@@ -1,0 +1,33 @@
+The columns in the dataset have the following meanings:
+
+player: The player's name.
+tour: ATP or WTA.
+country: The country the player represents. If this is 'World', avoid making references to the player's nationality.
+ranking: The player's ranking as of September 28th, 2026.
+
+These fields represent playing statistics that overall encompass playing style.
+aces: Number of aces per first serve that goes in.
+first_in: First serve percentage.
+first_won: Percentage of points won on first serve.
+second_in: Second serve percentage.
+second_won: Percentage of points won on second serve.
+first_ret_won:  Percentage of points won on first serve return.
+second_ret_won:  Percentage of points won on second serve return.
+winners: Percentage of winners to overall points played.
+unforced: Percentage of unforced to overall points played, subtracted from 1. This means a high score correlates to a low error frequency.
+net: Percentage of points the player approached the net to overall points played.
+net_won: Percentage of points won after approaching the net.
+hard: Win rate on hard courts.
+clay: Win rate on clay courts.
+grass: Win rate on grass courts.
+strong_stat: The player's strongest stat.
+weak_stat: The player's weakest stat.
+strong_surface: The player's strongest surface.
+weak_surface: The player's weakest surface.
+stat_offset: A measure of the difference between this player's stats and the user's favourites.
+strong_diff: A measure of stat-offset for this player's strongest stat.
+weak_diff: A measure of stat-offset for this player's weakest stat.
+
+In the other csv file:
+value: Statistical significance. Only talk about the top 2-4 stats in this column.
+scaled_mean: A measure of how good the user's favourite players are on this stat. If this is negative, the players are generally poor at this.
