@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-import os
 import numpy as np
 import random
 from datetime import date
@@ -9,16 +8,11 @@ from sklearn.preprocessing import StandardScaler
 
 from openai import OpenAI
 
-from dotenv import load_dotenv
-load_dotenv()
-
 def get_data(url):
     response = requests.get(url)
     return response.json()
 
-def get_picks(df, atp, wta, favs, max_ranking, max_age):
-
-    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+def get_picks(df, atp, wta, favs, max_ranking, max_age, OPENROUTER_API_KEY):
     
     players_alt = df.copy()
 
