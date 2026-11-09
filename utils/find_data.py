@@ -217,9 +217,6 @@ def get_picks(df, atp, wta, favs, max_ranking, max_age, OPENROUTER_API_KEY):
       api_key=OPENROUTER_API_KEY,              # 
     )
 
-    pd.concat([players_input, players_picked]).to_csv('players_picked.csv')
-    input_dist.to_csv('input_stats.csv')
-
     output_file = pd.concat([players_input, players_picked]).to_csv()
     input_file = input_dist.to_csv()
 
