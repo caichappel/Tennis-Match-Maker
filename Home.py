@@ -5,6 +5,8 @@ import random
 import pandas as pd
 from utils.find_data import get_picks
 
+OPENROUTER_API_KEY = st.secrets["OPENROUTER_API_KEY"]
+
 st.set_page_config(page_title="Find your next favourite player", page_icon="🎾")
 
 
@@ -102,7 +104,7 @@ if st.button("Generate recommendations", type="primary"):
     if st.session_state['favourites'] == [''] * 5:
         st.warning("Add at least one player you're a fan of first.")
     else:
-        st.session_state['ai_result'], st.session_state['picks'] = get_picks(st.session_state['players'], include_atp, include_wta, st.session_state['favourites'], max_ranking, max_age)
+        st.session_state['ai_result'], st.session_state['picks'] = get_picks(st.session_state['players'], include_atp, include_wta, st.session_state['favourites'], max_ranking, max_age, OPENROUTER_API_KEY)
 
 if 'ai_result' in st.session_state.keys():
     st.write(st.session_state['ai_result'])
